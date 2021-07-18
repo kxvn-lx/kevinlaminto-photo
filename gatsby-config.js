@@ -25,9 +25,9 @@ module.exports = {
                 apiKey: process.env.CLOUDINARY_API_KEY,
                 apiSecret: process.env.CLOUDINARY_API_SECRET,
                 maxResults: 500,
+                tags: true,
             },
         },
-        `gatsby-plugin-eslint`,
         `gatsby-plugin-react-helmet`,
         {
             resolve: `gatsby-plugin-manifest`,

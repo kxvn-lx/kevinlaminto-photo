@@ -12,12 +12,15 @@ function IndexPage() {
                 edges {
                     node {
                         secure_url
+                        tags
                     }
                 }
             }
         }
     `)
-    const images = data.allCloudinaryMedia.edges
+    const images = data.allCloudinaryMedia.edges.filter(
+        (image) => image.node.tags.length === 0
+    )
 
     return (
         <Layout>
@@ -29,6 +32,7 @@ function IndexPage() {
             <section className="grid grid-rows-1 gap-4">
                 {images.map((image, index) => (
                     <img
+                        key={index}
                         className="rounded"
                         src={image.node.secure_url}
                         alt={index}
