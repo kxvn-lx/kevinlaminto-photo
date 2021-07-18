@@ -5,7 +5,7 @@ import Header from './header'
 
 function Layout({ children }) {
     return (
-        <div className="flex flex-wrap min-h-screen font">
+        <div className="flex flex-wrap min-h-screen font bg-gray-50">
             <div className="w-full md:w-1/3 px-4 py-8">
                 <Header />
             </div>

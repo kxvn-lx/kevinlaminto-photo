@@ -13,11 +13,9 @@ function Header() {
     `)
 
     return (
-        <header className="sticky p-4 w-72">
+        <header className="sticky p-4 w-72 top-20 left-20">
             <Link to="/" className="no-underline">
-                <h1 className="text-3xl font-serif">
-                    {site.siteMetadata.title}
-                </h1>
+                <h1 className="text-3xl">{site.siteMetadata.title}</h1>
             </Link>
 
             <nav className="mt-4">
