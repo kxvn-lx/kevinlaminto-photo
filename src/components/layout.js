@@ -1,49 +1,28 @@
-import PropTypes from "prop-types";
-import React from "react";
+import PropTypes from 'prop-types'
+import React from 'react'
 
-import Header from "./header";
+import Header from './header'
 
 function Layout({ children }) {
-  return (
-    <div className="flex flex-col min-h-screen font-sans text-gray-900">
-      <Header />
+    return (
+        <div className="flex flex-wrap min-h-screen font">
+            <div className="w-full md:w-1/3 px-4 py-8">
+                <Header />
+            </div>
 
-      <main className="flex-1 w-full max-w-4xl px-4 py-8 mx-auto md:px-8 md:py-16">
-        {children}
-      </main>
+            <main className="flex-1 px-4 py-8 mx-auto md:ml-auto w-full md:w-2/3 md:max-w-xl md:mr-40">
+                {children}
 
-      <footer className="bg-blue-700">
-        <nav className="flex justify-between max-w-4xl p-4 mx-auto text-sm md:p-8">
-          <p className="text-white">
-            Created by{` `}
-            <a
-              className="font-bold no-underline"
-              href="https://bryant.io"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Taylor Bryant
-            </a>
-          </p>
-
-          <p>
-            <a
-              className="font-bold text-white no-underline"
-              href="https://github.com/taylorbryant/gatsby-starter-tailwind"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              GitHub
-            </a>
-          </p>
-        </nav>
-      </footer>
-    </div>
-  );
+                <footer className="text-xs text-gray-500 mt-20">
+                    <p>Copyright © Kevin Laminto All rights reserved.</p>
+                </footer>
+            </main>
+        </div>
+    )
 }
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-};
+    children: PropTypes.node.isRequired,
+}
 
-export default Layout;
+export default Layout
