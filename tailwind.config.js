@@ -6,8 +6,9 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                'sd-stone': '#F9F7E8',
-                'sd-green': '#62BFAD',
+                'kl-black': '#192A51',
+                'kl-white': '#FDFFFC',
+                'kl-salmon': '#F49097',
             },
         },
     },

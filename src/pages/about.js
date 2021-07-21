@@ -12,7 +12,7 @@ function about() {
                 title="About"
             />
             <ScrollToTop />
-            <section className="bg-red-400">
+            <section className="max-w-lg mt-20">
                 <p>
                     Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                     Officia, fugit, repellat aut obcaecati sit facere est

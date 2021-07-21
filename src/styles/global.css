@@ -35,9 +35,22 @@
 }
 
 a {
-    @apply hover:text-sd-green;
+    @apply text-gray-600;
+}
+
+a:hover {
+    @apply text-kl-salmon;
 }
 
 .active {
-    @apply text-sd-green;
+    @apply text-kl-salmon;
+}
+
+header ul {
+    @apply space-y-2;
+}
+
+.kl-layout-item {
+    height: fit-content;
+    align-self: flex-end;
 }

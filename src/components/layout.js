@@ -5,15 +5,12 @@ import Header from './header'
 
 function Layout({ children }) {
     return (
-        <div className="flex flex-wrap min-h-screen font bg-sd-stone">
-            <div className="w-full md:w-1/3 px-4 py-8">
-                <Header />
-            </div>
-
-            <main className="flex-1 px-4 py-8 mx-auto md:ml-auto w-full md:w-2/3 md:max-w-xl md:mr-40">
+        <div className="min-h-screen font text-kl-black bg-kl-white">
+            <Header className="mt-20 p-4 w-full max-w-5xl mx-auto" />
+            <main className="flex-1 px-4 py-8 mx-auto w-full max-w-5xl mt-40">
                 {children}
 
-                <footer className="text-xs text-gray-500 mt-20">
+                <footer className="text-xs text-gray-500 mt-64 text-center mb-20">
                     <p>Copyright © Kevin Laminto All rights reserved.</p>
                 </footer>
             </main>

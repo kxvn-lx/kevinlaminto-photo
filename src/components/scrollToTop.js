@@ -27,9 +27,13 @@ export default function ScrollToTop() {
     return (
         <React.Fragment>
             {isVisible && (
-                <div onClick={scrollToTop} className="scrollTop">
-                    <FaArrowUp />
-                </div>
+                <button
+                    type="button"
+                    onClick={scrollToTop}
+                    className="scrollTop"
+                >
+                    <FaArrowUp title="Scroll to top icon" size="30" />
+                </button>
             )}
         </React.Fragment>
     )

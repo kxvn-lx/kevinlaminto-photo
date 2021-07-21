@@ -5,12 +5,25 @@ const fullConfig = resolveConfig(tailwindConfig)
 require('dotenv').config()
 
 module.exports = {
+    flags: {
+        DEV_SSR: false,
+    },
     siteMetadata: {
         title: `Kevin Laminto Photo`,
         description: `Melbourne based photographer`,
         author: `@kxvn.lx`,
     },
     plugins: [
+        {
+            resolve: `gatsby-plugin-remote-images`,
+            options: {
+                nodeType: 'CloudinaryMedia',
+                imagePath: 'secure_url',
+            },
+        },
+        `gatsby-plugin-image`,
+        `gatsby-plugin-sharp`,
+        `gatsby-transformer-sharp`, // Needed for dynamic images
         {
             resolve: `gatsby-source-filesystem`,
             options: {
@@ -53,6 +66,6 @@ module.exports = {
                 ],
             },
         },
-        `gatsby-plugin-offline`,
+        // `gatsby-plugin-offline`,
     ],
 }
