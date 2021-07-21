@@ -12,8 +12,18 @@ function Layout({ children }) {
             <main className="flex-1 px-4 py-8 mx-auto w-full max-w-5xl mt-40">
                 {children}
 
-                <footer className="text-xs text-gray-500 mt-64 text-center mb-20">
-                    <p>Copyright © Kevin Laminto All rights reserved.</p>
+                <footer className="mt-64 mb-20 space-y-10">
+                    <div className="h-px bg-kl-black w-48"></div>
+                    <p>
+                        Follow{' '}
+                        <a
+                            href="https://www.instagram.com/kevin.lx_/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            @kevin.lx_
+                        </a>
+                    </p>
                 </footer>
             </main>
         </HeroDiv>

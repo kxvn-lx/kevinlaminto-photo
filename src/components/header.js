@@ -38,18 +38,40 @@ function Header({ className }) {
 
                 <ul className="text-sm mt-20">
                     <li>
-                        <a href="mailto:kevin.laminto@gmail.com">Email</a>
+                        <a
+                            href="mailto:kevin.laminto@gmail.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Email
+                        </a>
                     </li>
                     <li>
-                        <a href="https://www.facebook.com/kxvn.lx">Facebook</a>
+                        <a
+                            href="https://www.facebook.com/kxvn.lx"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Facebook
+                        </a>
                     </li>
                     <li>
-                        <a href="https://www.instagram.com/kxvn.lx">
+                        <a
+                            href="https://www.instagram.com/kxvn.lx"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
                             Instagram
                         </a>
                     </li>
                     <li>
-                        <a href="https://unsplash.com/@kxvn_lx">Unsplash</a>
+                        <a
+                            href="https://unsplash.com/@kxvn_lx"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Unsplash
+                        </a>
                     </li>
                 </ul>
             </div>
