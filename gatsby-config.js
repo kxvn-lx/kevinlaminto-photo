@@ -14,6 +14,7 @@ module.exports = {
         author: `@kxvn.lx`,
     },
     plugins: [
+        `gatsby-plugin-styled-components`,
         {
             resolve: `gatsby-plugin-remote-images`,
             options: {

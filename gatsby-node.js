@@ -32,7 +32,7 @@ exports.createPages = async ({ graphql, actions }) => {
     const seriesTemplate = path.resolve(`src/components/seriesTemplate.js`)
     const result = await graphql(`
         query {
-            allCloudinaryMedia {
+            allCloudinaryMedia(filter: { tags: { nin: ["main"] } }) {
                 edges {
                     node {
                         tags
@@ -42,17 +42,14 @@ exports.createPages = async ({ graphql, actions }) => {
         }
     `)
 
-    const taggedImages = result.data.allCloudinaryMedia.edges.filter(
-        (image) => image.node.tags.length > 0
+    const taggedImages = result.data.allCloudinaryMedia.edges.map(
+        (image) => image.node.tags[0]
     )
 
-    const tags = taggedImages
-        .map((image) => image.node.tags[0])
-        .filter((v, i, a) => a.indexOf(v) === i)
+    const tags = taggedImages.filter((v, i, a) => a.indexOf(v) === i)
 
     tags.forEach((tag) => {
         const slug = `series/${tag.replace(/\s+/g, '-').toLowerCase()}`
-
         createPage({
             path: slug,
             component: seriesTemplate,

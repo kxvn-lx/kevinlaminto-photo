@@ -1,9 +1,10 @@
 {
-  "name": "gatsby-starter-tailwind",
-  "description": "Gatsby starter styled with Tailwind",
+  "name": "kevin-laminto-photo",
+  "description": "Kevin Laminto Photography Portfolio",
   "version": "5.0.0",
-  "author": "Taylor Bryant <taylor@bryant.io>",
+  "author": "Kevin Laminto <kevin.laminto@gmail.com>",
   "dependencies": {
+    "babel-plugin-styled-components": "^1.13.2",
     "dotenv": "^10.0.0",
     "gatsby": "^3.9.1",
     "gatsby-plugin-image": "^1.9.0",
@@ -13,6 +14,7 @@
     "gatsby-plugin-react-helmet": "^4.9.0",
     "gatsby-plugin-remote-images": "^3.0.0",
     "gatsby-plugin-sharp": "^3.9.0",
+    "gatsby-plugin-styled-components": "^4.10.0",
     "gatsby-source-cloudinary": "^0.1.14",
     "gatsby-source-filesystem": "^3.9.0",
     "gatsby-transformer-sharp": "^3.9.0",
@@ -20,7 +22,8 @@
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-helmet": "6.1.0",
-    "react-icons": "^4.2.0"
+    "react-icons": "^4.2.0",
+    "styled-components": "^5.3.0"
   },
   "keywords": [
     "gatsby",
