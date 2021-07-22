@@ -44,20 +44,18 @@ function series({ data }) {
                 title="Series"
             />
             <ScrollToTop />
-            <ul className="grid grid-cols-2 gap-4">
+            <section className="grid grid-cols-3 gap-10">
                 {uniquedImages.map((image, index) => {
                     const data = getImage(image.localImage)
                     const link = `${image.tag}`
                     return (
-                        <li>
-                            <Link to={link} className="no-underline">
-                                <GatsbyImage image={data} alt={index} />
-                                <p className="mt-2">{image.tag}</p>
-                            </Link>
-                        </li>
+                        <Link to={link} className="no-underline">
+                            <GatsbyImage image={data} alt={index} />
+                            <p className="mt-2">{image.tag}</p>
+                        </Link>
                     )
                 })}
-            </ul>
+            </section>
         </Layout>
     )
 }
@@ -70,10 +68,7 @@ export const query = graphql`
                     tags
                     localImage {
                         childImageSharp {
-                            gatsbyImageData(
-                                placeholder: BLURRED
-                                aspectRatio: 1
-                            )
+                            gatsbyImageData(placeholder: BLURRED)
                         }
                     }
                 }

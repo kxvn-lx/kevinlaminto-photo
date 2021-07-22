@@ -38,7 +38,7 @@ module.exports = {
                 cloudName: process.env.CLOUDINARY_CLOUD_NAME,
                 apiKey: process.env.CLOUDINARY_API_KEY,
                 apiSecret: process.env.CLOUDINARY_API_SECRET,
-                maxResults: 500,
+                maxResults: 100,
                 tags: true,
             },
         },
@@ -52,7 +52,7 @@ module.exports = {
                 background_color: fullConfig.theme.colors.white,
                 theme_color: fullConfig.theme.colors.green['500'],
                 display: `minimal-ui`,
-                icon: `src/images/tailwind-icon.png`,
+                icon: `src/images/favicon.png`,
             },
         },
         {

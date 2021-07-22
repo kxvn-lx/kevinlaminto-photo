@@ -12,18 +12,46 @@ function Layout({ children }) {
             <main className="flex-1 px-4 py-8 mx-auto w-full max-w-5xl mt-40">
                 {children}
 
-                <footer className="mt-64 mb-20 space-y-10">
+                <footer className="mt-64 mb-20 space-y-10 text-sm">
                     <div className="h-px bg-kl-black w-48"></div>
-                    <p>
-                        Follow{' '}
-                        <a
-                            href="https://www.instagram.com/kevin.lx_/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            @kevin.lx_
-                        </a>
-                    </p>
+                    <ul>
+                        <li>
+                            <a
+                                href="mailto:kevin.laminto@gmail.com"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Email
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="https://www.facebook.com/kxvn.lx"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Facebook
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="https://www.instagram.com/kxvn.lx"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Instagram
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="https://unsplash.com/@kxvn_lx"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Unsplash
+                            </a>
+                        </li>
+                    </ul>
                 </footer>
             </main>
         </HeroDiv>

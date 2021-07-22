@@ -64,6 +64,10 @@ const SeriesTemplate = (props) => {
                     )
                 })}
             </section>
+
+            <section className="mt-20 text-center text-gray-400 text-sm">
+                <p>{`Total images: ${images.length}`}</p>
+            </section>
         </Layout>
     )
 }
