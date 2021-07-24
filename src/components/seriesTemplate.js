@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
+import Image from './image'
 import Layout from './layout'
 import SEO from './seo'
 import ScrollToTop from './scrollToTop'
@@ -15,22 +15,15 @@ const SeriesTemplate = (props) => {
                 edges {
                     node {
                         tags
-                        localImage {
-                            childImageSharp {
-                                gatsbyImageData(
-                                    placeholder: BLURRED
-                                    layout: FULL_WIDTH
-                                )
-                            }
-                        }
+                        secure_url
                     }
                 }
             }
         }
     `)
 
-    const images = data.allCloudinaryMedia.edges.filter(
-        (image) => image.node.tags[0] === title
+    const images = data.allCloudinaryMedia.edges.filter((image) =>
+        image.node.tags.includes(title)
     )
 
     return (
@@ -54,10 +47,10 @@ const SeriesTemplate = (props) => {
 
             <section className="grid grid-cols-3 gap-10">
                 {images.map((image, index) => {
-                    const data = getImage(image.node.localImage)
                     return (
-                        <GatsbyImage
-                            image={data}
+                        <Image
+                            key={index}
+                            src={image.node.secure_url}
                             alt={index}
                             className="kl-layout-item"
                         />

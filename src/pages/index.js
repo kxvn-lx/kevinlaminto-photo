@@ -1,10 +1,10 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import ScrollToTop from '../components/scrollToTop'
+import Image from '../components/image'
 
 function IndexPage({ data }) {
     const images = data.allCloudinaryMedia.edges
@@ -18,10 +18,10 @@ function IndexPage({ data }) {
             <ScrollToTop />
             <section className="grid grid-cols-3 gap-10">
                 {images.map((image, index) => {
-                    const data = getImage(image.node.localImage)
                     return (
-                        <GatsbyImage
-                            image={data}
+                        <Image
+                            key={index}
+                            src={image.node.secure_url}
                             alt={index}
                             className="kl-layout-item"
                         />
@@ -38,11 +38,7 @@ export const query = graphql`
             edges {
                 node {
                     tags
-                    localImage {
-                        childImageSharp {
-                            gatsbyImageData(placeholder: BLURRED)
-                        }
-                    }
+                    secure_url
                 }
             }
         }

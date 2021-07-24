@@ -1,37 +1,11 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 import Layout from '../components/layout'
 import ScrollToTop from '../components/scrollToTop'
 import SEO from '../components/seo'
-
-const parsedUniqueOnly = (arr) => {
-    let tempDict = {}
-    let tempArr = []
-
-    arr.forEach((obj) => {
-        const tags = obj.node.tags
-        if (!tempDict.hasOwnProperty(tags[0])) {
-            tempDict[tags[0]] = obj.node.localImage
-        }
-
-        if (tags.includes('feature')) {
-            tempDict[tags[0]] = obj.node.localImage
-        }
-    })
-
-    for (var key in tempDict) {
-        if (tempDict.hasOwnProperty(key)) {
-            tempArr.push({
-                tag: key,
-                localImage: tempDict[key],
-            })
-        }
-    }
-
-    return tempArr
-}
+import { parsedUniqueOnly } from '../components/utilities/parser'
+import Image from '../components/image'
 
 function series({ data }) {
     const taggedImages = data.allCloudinaryMedia.edges
@@ -46,11 +20,16 @@ function series({ data }) {
             <ScrollToTop />
             <section className="grid grid-cols-3 gap-10">
                 {uniquedImages.map((image, index) => {
-                    const data = getImage(image.localImage)
-                    const link = `${image.tag}`
+                    const link = `${image.tag
+                        .replace(/\s+/g, '-')
+                        .toLowerCase()}`
                     return (
-                        <Link to={link} className="no-underline">
-                            <GatsbyImage image={data} alt={index} />
+                        <Link to={link} className="no-underline kl-layout-item">
+                            <Image
+                                key={index}
+                                src={image.secure_url}
+                                alt={index}
+                            />
                             <p className="mt-2">{image.tag}</p>
                         </Link>
                     )
@@ -66,11 +45,7 @@ export const query = graphql`
             edges {
                 node {
                     tags
-                    localImage {
-                        childImageSharp {
-                            gatsbyImageData(placeholder: BLURRED)
-                        }
-                    }
+                    secure_url
                 }
             }
         }

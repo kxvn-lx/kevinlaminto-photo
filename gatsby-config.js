@@ -15,13 +15,13 @@ module.exports = {
     },
     plugins: [
         `gatsby-plugin-styled-components`,
-        {
-            resolve: `gatsby-plugin-remote-images`,
-            options: {
-                nodeType: 'CloudinaryMedia',
-                imagePath: 'secure_url',
-            },
-        },
+        // {
+        //     resolve: `gatsby-plugin-remote-images`,
+        //     options: {
+        //         nodeType: 'CloudinaryMedia',
+        //         imagePath: 'secure_url',
+        //     },
+        // },
         `gatsby-plugin-image`,
         `gatsby-plugin-sharp`,
         `gatsby-transformer-sharp`, // Needed for dynamic images
@@ -38,7 +38,7 @@ module.exports = {
                 cloudName: process.env.CLOUDINARY_CLOUD_NAME,
                 apiKey: process.env.CLOUDINARY_API_KEY,
                 apiSecret: process.env.CLOUDINARY_API_SECRET,
-                maxResults: 100,
+                maxResults: 500,
                 tags: true,
             },
         },

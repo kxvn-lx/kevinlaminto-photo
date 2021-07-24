@@ -1,31 +1,5 @@
 const path = require(`path`)
 
-const parsedUniqueOnly = (arr) => {
-    let tempDict = {}
-    let tempArr = []
-
-    arr.forEach((obj) => {
-        const tags = obj.node.tags
-        if (!tempDict.hasOwnProperty(tags[0])) {
-            tempDict[tags[0]] = obj.node.localImage
-        }
-
-        if (tags.includes('feature')) {
-            tempDict[tags[0]] = obj.node.localImage
-        }
-    })
-
-    for (var key in tempDict) {
-        if (tempDict.hasOwnProperty(key)) {
-            tempArr.push({
-                tag: key,
-            })
-        }
-    }
-
-    return tempArr
-}
-
 // Create blog pages dynamically
 exports.createPages = async ({ graphql, actions }) => {
     const { createPage } = actions
@@ -42,9 +16,18 @@ exports.createPages = async ({ graphql, actions }) => {
         }
     `)
 
-    const taggedImages = result.data.allCloudinaryMedia.edges.map(
-        (image) => image.node.tags[0]
-    )
+    const taggedImages = result.data.allCloudinaryMedia.edges.map((image) => {
+        const tags = image.node.tags
+        const featureIndex = tags.indexOf('feature')
+
+        if (featureIndex !== -1) {
+            tags.splice(featureIndex, 1)
+        }
+
+        if (tags.length === 1) {
+            return tags[0]
+        }
+    })
 
     const tags = taggedImages.filter((v, i, a) => a.indexOf(v) === i)
 
