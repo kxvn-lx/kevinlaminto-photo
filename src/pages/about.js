@@ -7,17 +7,23 @@ import SEO from '../components/seo'
 function about() {
     return (
         <Layout>
-            <SEO
-                keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
-                title="About"
-            />
+            <SEO title="About" />
             <ScrollToTop />
             <section className="max-w-lg mt-20">
                 <p>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Officia, fugit, repellat aut obcaecati sit facere est
-                    laboriosam, omnis unde debitis quia quasi ratione nulla
-                    voluptatum suscipit mollitia enim magnam quod!
+                    Kevin Laminto (b.1999) is a photographer and creative
+                    director based in Melbourne, Australia. His works primarily
+                    revolves around contemporary, fashion, lifestyle, and
+                    portrait photography. for inquiries, commissions, and
+                    questions, feel free to email Kevin directly at:{' '}
+                    <a
+                        href="mailto:kevin.laminto@gmail.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        kevin.laminto@gmail.com
+                    </a>
+                    .
                 </p>
             </section>
         </Layout>

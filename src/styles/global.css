@@ -54,3 +54,11 @@ header ul {
     height: fit-content;
     align-self: flex-end;
 }
+
+main a {
+    @apply underline;
+}
+
+footer a {
+    @apply no-underline !important;
+}

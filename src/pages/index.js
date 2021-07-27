@@ -11,12 +11,9 @@ function IndexPage({ data }) {
 
     return (
         <Layout>
-            <SEO
-                keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
-                title="Home"
-            />
+            <SEO title="Home" />
             <ScrollToTop />
-            <section className="grid grid-cols-3 gap-10">
+            <section className="grid grid-cols-1 md:grid-cols-3 gap-10">
                 {images.map((image, index) => {
                     return (
                         <Image

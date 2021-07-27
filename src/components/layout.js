@@ -8,8 +8,8 @@ import heroBg from '../images/background.png'
 function Layout({ children }) {
     return (
         <HeroDiv className="min-h-screen font text-kl-black bg-kl-white">
-            <Header className="pt-20 p-4 w-full max-w-4xl mx-auto" />
-            <main className="flex-1 px-4 py-8 mx-auto w-full max-w-4xl mt-40">
+            <Header className="pt-20 p-4 w-full max-w-6xl mx-auto" />
+            <main className="flex-1 px-4 py-8 mx-auto w-full max-w-md md:max-w-6xl mt-40">
                 {children}
 
                 <footer className="mt-64 mb-20 space-y-10 text-sm">

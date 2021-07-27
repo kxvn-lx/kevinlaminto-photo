@@ -13,12 +13,9 @@ function series({ data }) {
 
     return (
         <Layout>
-            <SEO
-                keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
-                title="Series"
-            />
+            <SEO title="Series" />
             <ScrollToTop />
-            <section className="grid grid-cols-3 gap-10">
+            <section className="grid grid-cols-1 md:grid-cols-3 gap-10">
                 {uniquedImages.map((image, index) => {
                     const link = `${image.tag
                         .replace(/\s+/g, '-')
