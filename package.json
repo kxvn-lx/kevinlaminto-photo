@@ -7,7 +7,7 @@
     "@lottiefiles/react-lottie-player": "^3.3.1",
     "babel-plugin-styled-components": "^1.13.2",
     "dotenv": "^10.0.0",
-    "gatsby": "^5.3.2",
+    "gatsby": "^5.5.0",
     "gatsby-plugin-image": "^1.9.0",
     "gatsby-plugin-manifest": "^3.9.0",
     "gatsby-plugin-offline": "^4.9.0",
